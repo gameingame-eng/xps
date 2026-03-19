@@ -378,6 +378,12 @@ h1 {
   font-weight: 700;
 }
 
+.workspace-header h1 {
+  max-width: none;
+  font-size: clamp(1.85rem, 3vw, 2.6rem);
+  line-height: 1;
+}
+
 h2 {
   margin: 6px 0 0;
   font-size: clamp(1.6rem, 2vw, 2.1rem);
