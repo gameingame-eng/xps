@@ -1,0 +1,16 @@
+{
+  "name": "XPS",
+  "image": "vsc-vortexprinters-55378838ae4884275bb8701515a29286583b0e4363d89284d6d699749f12dc02:latest",
+  "overrideCommand": true,
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/XPS,type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces/XPS",
+  "forwardPorts": [5173],
+  "postCreateCommand": "npm ci",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "sh"
+      }
+    }
+  }
+}
