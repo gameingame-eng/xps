@@ -1,23 +1,34 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/font/Montseratt.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
+  --font-ui: 'Montserrat', 'Avenir Next', 'Segoe UI', 'Helvetica Neue', sans-serif;
   color-scheme: light;
-  --bg: #ffffff;
-  --panel: #fcfcfc;
-  --panel-alt: #f2f2f2;
-  --panel-soft: #f7f7f7;
-  --input-bg: #ffffff;
-  --text: #111111;
-  --text-strong: #000000;
-  --text-muted: #4b4b4b;
-  --border: #d8d8d8;
-  --accent: #000000;
-  --accent-contrast: #ffffff;
-  --hero-glow: rgba(0, 0, 0, 0.08);
-  --shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --bg: #f4eee7;
+  --panel: rgba(255, 252, 248, 0.78);
+  --panel-alt: rgba(236, 227, 216, 0.74);
+  --panel-soft: rgba(255, 249, 243, 0.92);
+  --input-bg: #fffefc;
+  --text: #2a2017;
+  --text-strong: #16110d;
+  --text-muted: #6c5a4b;
+  --border: rgba(69, 47, 27, 0.11);
+  --border-strong: rgba(69, 47, 27, 0.24);
+  --accent: #a3471f;
+  --accent-contrast: #fff8f2;
+  --hero-glow: rgba(199, 104, 44, 0.22);
+  --shadow: 0 28px 90px rgba(67, 42, 17, 0.11);
+  font-family: var(--font-ui);
   line-height: 1.5;
   font-weight: 400;
   color: var(--text);
   background: var(--bg);
+  font-variant-numeric: tabular-nums;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,19 +38,20 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --bg: #080808;
-    --panel: #111111;
-    --panel-alt: #171717;
-    --panel-soft: #191919;
-    --input-bg: #0d0d0d;
-    --text: #ffd6b0;
-    --text-strong: #ff9a3d;
-    --text-muted: #d4b08c;
-    --border: #2d2d2d;
-    --accent: #ff7a00;
-    --accent-contrast: #000000;
-    --hero-glow: rgba(255, 122, 0, 0.18);
-    --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    --bg: #130d08;
+    --panel: rgba(27, 20, 14, 0.82);
+    --panel-alt: rgba(42, 26, 17, 0.74);
+    --panel-soft: rgba(35, 24, 17, 0.92);
+    --input-bg: #17110d;
+    --text: #f1d8b9;
+    --text-strong: #ffc78b;
+    --text-muted: #d7b188;
+    --border: rgba(255, 182, 112, 0.11);
+    --border-strong: rgba(255, 182, 112, 0.26);
+    --accent: #ff8f46;
+    --accent-contrast: #110804;
+    --hero-glow: rgba(255, 124, 38, 0.24);
+    --shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -57,12 +69,30 @@ body {
   margin: 0;
   background:
     radial-gradient(circle at top, var(--hero-glow), transparent 24%),
+    radial-gradient(
+      circle at bottom right,
+      color-mix(in srgb, var(--accent) 10%, transparent),
+      transparent 28%
+    ),
     var(--bg);
 }
 
 button,
 input {
   font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+.nav-item,
+.hero-badge,
+.header-pill,
+.status-chip,
+.eyebrow,
+.section-label {
+  font-family: var(--font-ui);
 }
 
 p {
