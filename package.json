@@ -1,7 +1,14 @@
 {
   "name": "xps",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "A React and Supabase finance workspace with authenticated budgeting views and starter database schema.",
+  "keywords": [
+    "react",
+    "vite",
+    "supabase",
+    "finance",
+    "budgeting"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +17,9 @@
     "preview": "vite preview",
     "dbpush": "supabase db push",
     "dbpull": "supabase db pull --schema public --out ./src/db"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.2",
@@ -25,6 +35,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
+    "supabase": "^2.81.3",
     "vite": "^8.0.0"
   }
 }

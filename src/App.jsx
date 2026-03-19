@@ -54,12 +54,16 @@ function App() {
   }, [])
 
   useEffect(() => {
-    function handleHashChange() {
+    function handleNavigationChange() {
       setActivePage(getPageFromHash())
     }
 
-    window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
+    window.addEventListener('hashchange', handleNavigationChange)
+    window.addEventListener('popstate', handleNavigationChange)
+    return () => {
+      window.removeEventListener('hashchange', handleNavigationChange)
+      window.removeEventListener('popstate', handleNavigationChange)
+    }
   }, [])
 
   function handleChange(event) {
@@ -109,7 +113,7 @@ function App() {
   }
 
   function handleNavigate(page) {
-    window.location.hash = page
+    window.history.pushState({}, '', `#${page}`)
     setActivePage(page)
   }
 
